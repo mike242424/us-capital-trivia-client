@@ -17,27 +17,28 @@ const ResultWrapper = styled.div`
 `;
 
 const FinalScore = styled.h2`
-  font-size: 22px;
+  font-size: 30px;
   font-weight: bold;
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 18px;
   }
 `;
 
 const ResultMessage = styled.p`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 14px;
   }
 `;
 
 const RetryButton = styled.button`
-  margin-top: 5px;
-  padding: 10px 20px;
+  font-size: 18px;
+  margin: 5px;
+  padding: 20px 40px;
   background-color: #20c997;
   color: white;
   border: none;
@@ -46,6 +47,11 @@ const RetryButton = styled.button`
 
   &:hover {
     background-color: #1a9982;
+  }
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+    padding: 10px 20px;
   }
 `;
 

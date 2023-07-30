@@ -14,23 +14,20 @@ const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-
-  @media (max-width: 681.6px) {
-    text-align: center;
-  }
 `;
 
 const QuestionTitle = styled.h2`
-  font-size: 22px;
+  font-size: 30px;
   font-weight: bold;
   text-align: center;
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 18px;
   }
 `;
@@ -49,7 +46,7 @@ const ChoiceButton = styled.button`
     background-color: #1a9982;
   }
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 12px;
     padding: 10px 20px;
     width: 60%;
@@ -61,7 +58,7 @@ const ScoreText = styled.p`
   font-weight: bold;
   text-align: center;
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 14px;
   }
 `;

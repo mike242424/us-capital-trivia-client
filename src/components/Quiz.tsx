@@ -6,10 +6,10 @@ import { questions } from "../data/quizData";
 
 const Title = styled.h1`
   text-align: center;
-  font-size: 34px;
+  font-size: 40px;
   margin-bottom: 30px;
 
-  @media (max-width: 681.6px) {
+  @media (max-width: 750px) {
     font-size: 28px;
   }
 `;
