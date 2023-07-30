@@ -20,7 +20,7 @@ const FinalScore = styled.h2`
   font-size: 22px;
   font-weight: bold;
 
-  @media (max-width: 518.4px) {
+  @media (max-width: 681.6px) {
     font-size: 18px;
   }
 `;
@@ -30,7 +30,7 @@ const ResultMessage = styled.p`
   font-weight: bold;
   margin-top: 10px;
 
-  @media (max-width: 518.4px) {
+  @media (max-width: 681.6px) {
     font-size: 14px;
   }
 `;

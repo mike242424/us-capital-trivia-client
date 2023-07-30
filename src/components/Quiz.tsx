@@ -9,13 +9,13 @@ const Title = styled.h1`
   font-size: 34px;
   margin-bottom: 30px;
 
-  @media (max-width: 518.4px) {
+  @media (max-width: 681.6px) {
     font-size: 28px;
   }
 `;
 
 const Container = styled.div`
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 `;
