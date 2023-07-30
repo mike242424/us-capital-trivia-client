@@ -28,7 +28,7 @@ const QuestionTitle = styled.h2`
   text-align: center;
 
   @media (max-width: 750px) {
-    font-size: 18px;
+    font-size: 22px;
   }
 `;
 
@@ -74,7 +74,7 @@ const Question: React.FC<QuestionProps> = ({
   return (
     <QuestionWrapper>
       <QuestionTitle>
-        Question #{index} {question}
+        {index}. {question}
       </QuestionTitle>
       <div>
         {choices.map((choice) => (
