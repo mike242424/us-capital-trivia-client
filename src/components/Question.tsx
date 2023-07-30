@@ -54,12 +54,12 @@ const ChoiceButton = styled.button`
 `;
 
 const ScoreText = styled.p`
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
 
   @media (max-width: 750px) {
-    font-size: 14px;
+    font-size: 18px;
   }
 `;
 
