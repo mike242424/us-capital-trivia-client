@@ -23,7 +23,7 @@ const QuestionWrapper = styled.div`
 `;
 
 const QuestionTitle = styled.h2`
-  font-size: 30px;
+  font-size: 36px;
   font-weight: bold;
   text-align: center;
 

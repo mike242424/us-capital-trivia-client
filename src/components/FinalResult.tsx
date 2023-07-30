@@ -17,7 +17,7 @@ const ResultWrapper = styled.div`
 `;
 
 const FinalScore = styled.h2`
-  font-size: 30px;
+  font-size: 36px;
   font-weight: bold;
 
   @media (max-width: 750px) {

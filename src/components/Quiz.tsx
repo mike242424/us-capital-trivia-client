@@ -6,7 +6,7 @@ import { questions } from "../data/quizData";
 
 const Title = styled.h1`
   text-align: center;
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 30px;
 
   @media (max-width: 750px) {
