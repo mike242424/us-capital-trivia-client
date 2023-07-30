@@ -21,7 +21,7 @@ const FinalScore = styled.h2`
   font-weight: bold;
 
   @media (max-width: 750px) {
-    font-size: 18px;
+    font-size: 24px;
   }
 `;
 
@@ -31,7 +31,7 @@ const ResultMessage = styled.p`
   margin-top: 10px;
 
   @media (max-width: 750px) {
-    font-size: 14px;
+    font-size: 18px;
   }
 `;
 
@@ -51,7 +51,7 @@ const RetryButton = styled.button`
 
   @media (max-width: 750px) {
     font-size: 12px;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 `;
 
