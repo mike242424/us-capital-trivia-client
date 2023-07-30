@@ -36,8 +36,9 @@ const QuestionTitle = styled.h2`
 `;
 
 const ChoiceButton = styled.button`
+  font-size: 18px;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 20px 40px;
   background-color: #20c997;
   color: white;
   border: none;
@@ -49,6 +50,8 @@ const ChoiceButton = styled.button`
   }
 
   @media (max-width: 518.4px) {
+    font-size: 12px;
+    padding: 10px 20px;
     width: 60%;
   }
 `;
