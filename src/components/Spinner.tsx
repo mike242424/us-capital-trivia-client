@@ -10,20 +10,19 @@ const spinAnimation = keyframes`
 `;
 
 const SpinnerContainer = styled.div`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 4px solid rgba(0, 0, 0, 0.3);
   border-top: 4px solid #20c997;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 100px;
+  height: 100px;
   animation: ${spinAnimation} 1s linear infinite;
 `;
 
-
 const Spinner = () => {
-  return (
-    <SpinnerContainer/>
-  );
+  return <SpinnerContainer />;
 };
 
 export default Spinner;
