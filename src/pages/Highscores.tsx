@@ -74,7 +74,7 @@ const Highscores = () => {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        console.error("Error fetching highscores:", err);
         setIsLoading(false);
       });
   }, []);
