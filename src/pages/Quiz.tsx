@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Question from "./Question";
-import FinalResult from "./FinalResult";
+import Question from "../components/Question";
+import FinalResult from "../components/FinalResult";
 import { questions } from "../data/quizData";
 
 const Title = styled.h1`

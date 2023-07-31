@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import axios from "axios";
+import Spinner from "./Spinner";
 
 type FinalResultProps = {
   score: number;
@@ -25,17 +28,7 @@ const FinalScore = styled.h2`
   }
 `;
 
-const ResultMessage = styled.p`
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 10px;
-
-  @media (max-width: 750px) {
-    font-size: 18px;
-  }
-`;
-
-const RetryButton = styled.button`
+const SubmitInitialsButton = styled.button`
   font-size: 18px;
   margin: 5px;
   padding: 20px 40px;
@@ -55,27 +48,60 @@ const RetryButton = styled.button`
   }
 `;
 
-const FinalResult: React.FC<FinalResultProps> = ({
-  score,
-  totalQuestions,
-  onRestart,
-}) => {
-  let message = "";
-  if (score === totalQuestions) {
-    message = "Congrats! You got all the questions correct!";
-  } else if (score > totalQuestions / 2) {
-    message = "Good job! You got more than half correct!";
-  } else {
-    message = "You can do better. Try Again!";
+const InitialsInput = styled.input`
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  width: 200px;
+  height: 35px;
+
+  &:focus {
+    outline-color: #20c997;
   }
+
+  @media (max-width: 750px) {
+    font-size: 12px;
+    width: 110px;
+    height: 10px;
+  }
+`;
+
+const FinalResult: React.FC<FinalResultProps> = ({ score, totalQuestions }) => {
+  const [initials, setInitials] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    axios.post(import.meta.env.VITE_API_URL, {
+      initials,
+      score,
+    });
+    setIsLoading(false);
+    navigate("/highscores");
+  };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <ResultWrapper>
       <FinalScore>
         Final Score: {score} out of {totalQuestions}
       </FinalScore>
-      <ResultMessage>{message}</ResultMessage>
-      <RetryButton onClick={onRestart}>Retry</RetryButton>
+      <form onSubmit={handleSubmit}>
+        <InitialsInput
+          type="text"
+          maxLength={3}
+          placeholder="Enter Your Initials..."
+          onChange={(e) => setInitials(e.target.value)}
+          required
+        />
+        <SubmitInitialsButton type="submit">Submit</SubmitInitialsButton>
+      </form>
     </ResultWrapper>
   );
 };
