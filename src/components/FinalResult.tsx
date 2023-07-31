@@ -96,6 +96,7 @@ const FinalResult: React.FC<FinalResultProps> = ({ score, totalQuestions }) => {
         <InitialsInput
           type="text"
           maxLength={3}
+          minLength={3}
           placeholder="Enter Your Initials..."
           onChange={(e) => setInitials(e.target.value)}
           required
