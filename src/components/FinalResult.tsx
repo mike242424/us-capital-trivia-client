@@ -69,6 +69,13 @@ const InitialsInput = styled.input`
   }
 `;
 
+const SpinnerWrapper = styled.div`
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  min-height: 100vh;
+`;
+
 const FinalResult: React.FC<FinalResultProps> = ({ score, totalQuestions }) => {
   const [initials, setInitials] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -85,7 +92,12 @@ const FinalResult: React.FC<FinalResultProps> = ({ score, totalQuestions }) => {
     navigate("/highscores");
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <SpinnerWrapper>
+        <Spinner />
+      </SpinnerWrapper>
+    );
 
   return (
     <ResultWrapper>

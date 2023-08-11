@@ -9,7 +9,19 @@ const spinAnimation = keyframes`
   }
 `;
 
-const SpinnerContainer = styled.div`
+const SpinnerOne = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #20c997;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: ${spinAnimation} 1s linear infinite;
+`;
+
+const SpinnerTwo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +34,11 @@ const SpinnerContainer = styled.div`
 `;
 
 const Spinner = () => {
-  return <SpinnerContainer />;
+  return (
+    <SpinnerOne>
+      <SpinnerTwo />
+    </SpinnerOne>
+  );
 };
 
 export default Spinner;

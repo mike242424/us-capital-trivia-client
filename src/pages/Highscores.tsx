@@ -61,6 +61,13 @@ const TryAgainButton = styled.button`
   }
 `;
 
+const SpinnerWrapper = styled.div`
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+  min-height: 100vh;
+`;
+
 const Highscores = () => {
   const [highscores, setHighscores] = useState<HighscoresType[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -83,7 +90,12 @@ const Highscores = () => {
     navigate("/");
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <SpinnerWrapper>
+        <Spinner />
+      </SpinnerWrapper>
+    );
 
   return (
     <>
