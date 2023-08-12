@@ -81,15 +81,22 @@ const FinalResult: React.FC<FinalResultProps> = ({ score, totalQuestions }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    axios.post(import.meta.env.VITE_API_URL, {
-      initials,
-      score,
-    });
-    setIsLoading(false);
-    navigate("/highscores");
+
+    try {
+      await axios.post(import.meta.env.VITE_API_URL, {
+        initials,
+        score,
+      });
+
+      setIsLoading(false);
+      navigate("/highscores");
+    } catch (error) {
+      console.error("Error submitting highscore:", error);
+      setIsLoading(false);
+    }
   };
 
   if (isLoading)
